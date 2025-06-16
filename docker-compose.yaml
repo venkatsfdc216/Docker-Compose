@@ -3,7 +3,7 @@ version: '3.8'
 services:
   jwc:
     build:
-      context: ./JavaWebCalculator
+      context: ./jwc
     container_name: javawebcalculator
     ports:
       - "8080:8080"
@@ -12,7 +12,7 @@ services:
 
   vprofile:
     build:
-      context: ./vprofile-project
+      context: ./vprofile
     container_name: vprofile
     ports:
       - "8081:8080"  # Assuming vprofile exposes 8080 internally
