@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  jwc:
+    build:
+      context: ./JavaWebCalculator
+    container_name: javawebcalculator
+    ports:
+      - "8080:8080"
+    networks:
+      - combined-net
+
+  vprofile:
+    build:
+      context: ./vprofile-project
+    container_name: vprofile
+    ports:
+      - "8081:8080"  # Assuming vprofile exposes 8080 internally
+    networks:
+      - combined-net
+
+networks:
+  combined-net:
+    driver: bridge
